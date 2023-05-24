@@ -5,9 +5,10 @@ a = []
 for i in range(n):
     a.append(int(input('введите элемент массива:')))
 x = int(input('введите искомое число x:'))
-a1 = []
-for i in range(n):
-    if abs(a[i] - x) == 1:
-        a1.append(a[i])
-# print(a1)
-for i in a1: print(i)
+min_diff = abs(x - a[0])
+close_num = a[0]
+for i in range(1, len(a)):
+    if min_diff > abs(x - a[i]):
+        min_diff = abs(x - a[i])
+        close_num = a[i]
+print(f"ближайшее к х число: {close_num}")
